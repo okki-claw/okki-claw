@@ -1,0 +1,9 @@
+# Local release assets prepared by the private repository sync script.
+.release-assets/
+
+# OS files
+.DS_Store
+
+# Editor files
+.idea/
+.vscode/
