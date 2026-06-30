@@ -66,9 +66,56 @@ The relay is not intended to receive your local OpenClaw credentials. OKKI Claw 
 - An OKKI Claw account and a pairing token from the web app.
 - Network access from your local machine to the OKKI Claw relay endpoint.
 
-## Install
+## Installation Options
 
-Download the latest `okki-claw-*.tgz` package from [GitHub Releases](https://github.com/okki-claw/okki-claw/releases/latest), then install it globally:
+Choose one of the following installation paths:
+
+- **Agent-assisted installation:** recommended if you already use Claude Code, Opencode, Codex, Oh My PI, or another local coding agent. Ask the agent to download and install the latest OKKI Claw release for you.
+- **Manual installation:** recommended if you prefer to run each command yourself.
+
+Both paths install the same release package and use the same pairing flow.
+
+## Quick Start: Agent-Assisted Installation
+
+Use this path when you want your local coding agent to perform the setup steps for you.
+
+### 1. Generate the installation prompt in OKKI Grow
+
+Open the OKKI Grow admin console, create or select the device you want to connect, then generate the OKKI Claw agent installation prompt.
+
+The generated prompt contains the installation instructions for your environment. Copy it into your local agent on the machine where you want to install OKKI Claw.
+
+Follow the generated prompt in your agent until it confirms that `okki-claw --help` works. If OKKI Grow includes a pairing token in the generated prompt, do not share that prompt publicly.
+
+### 2. Pair this device
+
+Get a pairing token from OKKI Claw, then either run the command yourself or ask your agent to run it locally:
+
+```bash
+okki-claw pair --pairing-token <token> --device-name "my-openclaw"
+```
+
+Pairing stores sidecar credentials in your local OKKI Claw configuration. Do not share this config file.
+
+### 3. Run the sidecar
+
+```bash
+okki-claw daemon
+```
+
+After the sidecar is connected, open the OKKI Claw web app from another device and choose the paired device.
+
+## Quick Start: Manual Installation
+
+Use this path when you want to install OKKI Claw yourself.
+
+### 1. Download the release package
+
+Open [GitHub Releases](https://github.com/okki-claw/okki-claw/releases/latest) and download the latest `okki-claw-*.tgz` package.
+
+### 2. Install globally
+
+From the directory containing the downloaded package, run:
 
 ```bash
 npm install -g ./okki-claw-<version>.tgz
@@ -77,13 +124,7 @@ okki-claw --help
 
 If you do not want a global install, you can also run the package with your preferred Node.js package tooling after downloading the release artifact.
 
-## Quick Start
-
-### 1. Start OpenClaw locally
-
-Start OpenClaw and make sure its local gateway is running on the same machine as OKKI Claw.
-
-### 2. Pair this device
+### 3. Pair this device
 
 Get a pairing token from OKKI Claw, then pair this local machine:
 
@@ -93,7 +134,7 @@ okki-claw pair --pairing-token <token> --device-name "my-openclaw"
 
 Pairing stores sidecar credentials in your local OKKI Claw configuration. Do not share this config file.
 
-### 3. Run the sidecar
+### 4. Run the sidecar
 
 ```bash
 okki-claw daemon

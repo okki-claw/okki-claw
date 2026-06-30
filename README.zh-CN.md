@@ -66,9 +66,56 @@ OpenClaw gateway 和本地 Agent 工作流
 - OKKI Claw 账号，以及从网页端获取的 pairing token。
 - 本机可以访问 OKKI Claw relay endpoint。
 
-## 安装
+## 安装方式
 
-从 [GitHub Releases](https://github.com/okki-claw/okki-claw/releases/latest) 下载最新的 `okki-claw-*.tgz` 包，然后全局安装：
+你可以选择以下任一安装路径：
+
+- **Agent 自动安装**：如果你已经在使用 Claude Code、Opencode、Codex、Oh My PI 或其他本地 coding agent，推荐让 agent 帮你下载安装最新 OKKI Claw release。
+- **手动安装**：如果你希望自己执行每一步命令，推荐使用这种方式。
+
+两种方式安装的是同一个 release 包，后续配对和启动流程也一致。
+
+## 快速开始：Agent 自动安装
+
+如果你希望本地 coding agent 帮你完成安装，可以使用这个流程。
+
+### 1. 在 OKKI Grow 后台生成安装 prompt
+
+打开 OKKI Grow 后台，创建或选择要连接的设备，然后生成 OKKI Claw 的 agent 安装 prompt。
+
+后台生成的 prompt 会包含适用于当前环境的安装指令。将它复制到你要安装 OKKI Claw 的机器上的本地 agent 中执行。
+
+按照 agent 中的生成 prompt 执行，直到它确认 `okki-claw --help` 可以正常运行。如果 OKKI Grow 生成的 prompt 中包含 pairing token，请不要公开分享这段 prompt。
+
+### 2. 配对当前设备
+
+从 OKKI Claw 获取 pairing token 后，你可以自己执行命令，也可以让 agent 在本机执行：
+
+```bash
+okki-claw pair --pairing-token <token> --device-name "my-openclaw"
+```
+
+配对会把 sidecar 凭证保存到本地 OKKI Claw 配置中。请不要分享该配置文件。
+
+### 3. 运行 sidecar
+
+```bash
+okki-claw daemon
+```
+
+sidecar 连接成功后，你可以在另一台设备打开 OKKI Claw 网页端，并选择这个已配对设备。
+
+## 快速开始：手动安装
+
+如果你希望自己完成安装，可以使用这个流程。
+
+### 1. 下载 release 包
+
+打开 [GitHub Releases](https://github.com/okki-claw/okki-claw/releases/latest)，下载最新的 `okki-claw-*.tgz` 包。
+
+### 2. 全局安装
+
+进入下载包所在目录，运行：
 
 ```bash
 npm install -g ./okki-claw-<version>.tgz
@@ -77,13 +124,7 @@ okki-claw --help
 
 如果你不想全局安装，也可以下载 release 产物后，使用你偏好的 Node.js 包工具运行。
 
-## 快速开始
-
-### 1. 在本机启动 OpenClaw
-
-先启动 OpenClaw，并确认它的本地 gateway 与 OKKI Claw 运行在同一台机器上。
-
-### 2. 配对当前设备
+### 3. 配对当前设备
 
 从 OKKI Claw 获取 pairing token 后，配对当前本机：
 
@@ -93,7 +134,7 @@ okki-claw pair --pairing-token <token> --device-name "my-openclaw"
 
 配对会把 sidecar 凭证保存到本地 OKKI Claw 配置中。请不要分享该配置文件。
 
-### 3. 运行 sidecar
+### 4. 运行 sidecar
 
 ```bash
 okki-claw daemon
