@@ -59,6 +59,25 @@ OpenClaw gateway and local agent workflows
 
 The relay is not intended to receive your local OpenClaw credentials. OKKI Claw discovers or reads local gateway configuration on your device and uses it locally.
 
+## Product Previews
+
+The screenshots below use sanitized showcase data. They contain no real device IDs, repository paths, tokens, or user content.
+
+<table>
+  <tr>
+    <td width="50%"><strong>Session workspace</strong><br /><img src="assets/screenshots/sessions.png" alt="OKKI Claw session workspace with multiple Agent sessions" width="460" /></td>
+    <td width="50%"><strong>Execution across projects</strong><br /><img src="assets/screenshots/session-detail.png" alt="OKKI Claw session detail with three project-tab groups and rich Agent message types" width="460" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Device management</strong><br /><img src="assets/screenshots/devices.png" alt="OKKI Claw device management with availability, latency, and provider capabilities" width="460" /></td>
+    <td width="50%"><strong>Rich public transcript</strong><br /><img src="assets/screenshots/public-share.png" alt="OKKI Claw public shared session with sanitized conversation, tool, plan, diff, log, and approval states" width="460" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>Custom ACP Agent configuration</strong><br /><img src="assets/screenshots/custom-acp-agents.png" alt="OKKI Claw custom ACP Agent profile configuration with capability switches" width="460" /></td>
+    <td width="50%"><strong>Environment allowlist</strong><br /><img src="assets/screenshots/acp-environment.png" alt="OKKI Claw ACP environment variable allowlist configuration" width="460" /></td>
+  </tr>
+</table>
+
 ## Requirements
 
 - Node.js 22 or later.

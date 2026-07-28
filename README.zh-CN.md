@@ -59,6 +59,25 @@ OpenClaw gateway 和本地 Agent 工作流
 
 云端 relay 不应该接收你的本地 OpenClaw 凭证。OKKI Claw 会在本机发现或读取 gateway 配置，并只在本地使用这些凭证。
 
+## 产品预览
+
+以下截图使用脱敏的示例数据，不包含真实设备 ID、仓库路径、Token 或用户内容。
+
+<table>
+  <tr>
+    <td width="50%"><strong>会话工作台</strong><br /><img src="assets/screenshots/sessions.png" alt="展示多条 Agent 会话的 OKKI Claw 会话工作台" width="460" /></td>
+    <td width="50%"><strong>跨项目执行详情</strong><br /><img src="assets/screenshots/session-detail.png" alt="展示三个项目 Tab 分组和丰富 Agent 消息类型的 OKKI Claw 会话详情" width="460" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>设备管理</strong><br /><img src="assets/screenshots/devices.png" alt="展示在线状态、延迟和 Provider 能力的 OKKI Claw 设备管理页" width="460" /></td>
+    <td width="50%"><strong>丰富的公共 Transcript</strong><br /><img src="assets/screenshots/public-share.png" alt="展示脱敏对话、工具、计划、Diff、日志和审批状态的 OKKI Claw 公共分享页" width="460" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><strong>自定义 ACP Agent 配置</strong><br /><img src="assets/screenshots/custom-acp-agents.png" alt="展示 Profile 与能力开关的 OKKI Claw 自定义 ACP Agent 配置" width="460" /></td>
+    <td width="50%"><strong>环境变量 allowlist</strong><br /><img src="assets/screenshots/acp-environment.png" alt="展示 ACP 环境变量 allowlist 的 OKKI Claw 配置页" width="460" /></td>
+  </tr>
+</table>
+
 ## 系统要求
 
 - Node.js 22 或更高版本。
